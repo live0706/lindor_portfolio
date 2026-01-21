@@ -15,13 +15,13 @@ const skillsData = {
     { name: 'React', icon: <Code size={32} /> },
     { name: 'TypeScript', icon: <Code size={32} /> },
     { name: 'Tailwind CSS', icon: <Code size={32} /> },
-    { name: 'Next.js', icon: <Code size={32} /> },
+    { name: 'Angular', icon: <Code size={32} /> },
   ],
   backend: [
     { name: 'Node.js', icon: <Server size={32} /> },
-    { name: 'Express', icon: <Server size={32} /> },
-    { name: 'Supabase', icon: <Cloud size={32} /> },
-    { name: 'MySQL', icon: <Server size={32} /> },
+    { name: 'PHP', icon: <Code size={32} /> },
+    { name: 'Python', icon: <Code size={32} /> },
+    { name: 'MySQL', icon: <Cloud size={32} /> },
   ],
   mobile: [
       { name: 'React Native', icon: <Smartphone size={32} /> },

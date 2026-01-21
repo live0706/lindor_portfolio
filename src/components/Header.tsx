@@ -10,17 +10,17 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-dark-bg/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700/50">
+    <header className="bg-dark-bg/85 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700/50 shadow-sm animate-fade-down">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#" className="text-2xl font-bold font-inter text-white">
-          JengaFolio<span className="text-accent">.</span>
+          Pape Lindor Fall<span className="text-accent">.</span>
         </a>
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-accent transition-colors duration-300 font-medium"
+              className="text-gray-300 hover:text-accent transition-colors duration-300 font-medium hover:underline underline-offset-4 decoration-accent/80"
             >
               {link.label}
             </a>

@@ -33,7 +33,14 @@ const ProjectsPage = () => {
       <h1 className="text-4xl font-bold text-center mb-12 font-['Inter']">My Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map(project => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard 
+            key={project.id} 
+            title={project.title}
+            description={project.description}
+            technologies={project.tech}
+            liveDemo={project.liveUrl}
+            github={project.repoUrl}
+          />
         ))}
       </div>
     </div>

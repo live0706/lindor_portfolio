@@ -38,9 +38,11 @@ const Projects = () => {
         <h2 className="text-3xl md:text-4xl font-bold font-inter text-center mb-16">
           Mes Projets Récents
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projectsData.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 grid-cards">
+          {projectsData.map((project, i) => (
+            <div key={project.title} className="reveal" style={{animationDelay: `${i * 60}ms`}}>
+              <ProjectCard {...project} />
+            </div>
           ))}
         </div>
       </div>

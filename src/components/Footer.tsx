@@ -2,9 +2,9 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { href: '#', icon: <Github size={20} />, name: 'GitHub' },
-    { href: '#', icon: <Linkedin size={20} />, name: 'LinkedIn' },
-    { href: '#', icon: <Twitter size={20} />, name: 'Twitter' },
+    { href: 'https://github.com/lyndor-fn', icon: <Github size={20} />, name: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/pape-lindor-fall-5847b2342/', icon: <Linkedin size={20} />, name: 'LinkedIn' },
+    { href: 'https://x.com/lyndor_jr', icon: <Twitter size={20} />, name: 'Twitter' },
   ];
 
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-6">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 sm:mb-0">
-            &copy; {new Date().getFullYear()} JengaFolio. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Lindor. Tous droits réservés.
           </p>
           <div className="flex items-center space-x-6">
             {socialLinks.map((link) => (

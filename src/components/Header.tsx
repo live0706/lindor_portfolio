@@ -3,6 +3,7 @@ import html2pdf from 'html2pdf.js';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const navLinks = [
     { href: '#about', label: 'À propos' },
     { href: '#skills', label: 'Compétences' },
@@ -11,15 +12,28 @@ const Header = () => {
   ];
 
   const downloadPDF = () => {
-    const element = document.body;
-    const options = {
-      margin: 0.5,
-      filename: 'portfolio-pape-lindor-fall.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-    };
-    html2pdf().set(options).from(element).save();
+    try {
+      setIsGeneratingPDF(true);
+      const element = document.body;
+      const options = {
+        margin: 0.5,
+        filename: 'portfolio-pape-lindor-fall.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(element).save().then(() => {
+        setIsGeneratingPDF(false);
+      }).catch((error) => {
+        console.error('Erreur lors de la génération du PDF:', error);
+        alert('Une erreur est survenue lors de la génération du PDF. Veuillez réessayer.');
+        setIsGeneratingPDF(false);
+      });
+    } catch (error) {
+      console.error('Erreur lors de la génération du PDF:', error);
+      alert('Une erreur est survenue lors de la génération du PDF. Veuillez réessayer.');
+      setIsGeneratingPDF(false);
+    }
   };
 
   return (
@@ -40,9 +54,10 @@ const Header = () => {
           ))}
           <button
             onClick={downloadPDF}
-            className="bg-accent hover:bg-accent/80 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300"
+            disabled={isGeneratingPDF}
+            className="bg-accent hover:bg-accent/80 disabled:bg-accent/50 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 disabled:cursor-not-allowed"
           >
-            Télécharger CV
+            {isGeneratingPDF ? 'Génération...' : 'Télécharger CV'}
           </button>
         </div>
         <div className="md:hidden">
@@ -71,9 +86,10 @@ const Header = () => {
                 setIsOpen(false);
                 downloadPDF();
               }}
-              className="bg-accent hover:bg-accent/80 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 mt-2"
+              disabled={isGeneratingPDF}
+              className="bg-accent hover:bg-accent/80 disabled:bg-accent/50 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 mt-2 disabled:cursor-not-allowed"
             >
-              Télécharger CV
+              {isGeneratingPDF ? 'Génération...' : 'Télécharger CV'}
             </button>
           </div>
         </div>

@@ -12,9 +12,9 @@ const ProjectCard = ({ title, description, technologies, liveDemo, github }: Pro
   return (
     <div className="card-advanced bg-card-bg rounded-lg overflow-hidden shadow-lg transition-all duration-300 flex flex-col border border-primary/30 card-hover animate-fade-up">
       <div className="card-border-glow" />
-      <div className="p-6 flex-grow flex flex-col">
+      <div className="p-6 grow flex flex-col">
         <h3 className="text-xl font-bold font-inter text-white mb-2">{title}</h3>
-        <p className="text-gray-300 mb-4 text-sm flex-grow">{description}</p>
+        <p className="text-gray-300 mb-4 text-sm grow">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech) => (
             <span key={tech} className="bg-primary/60 text-gray-100 text-xs font-semibold px-2.5 py-1 rounded-full">

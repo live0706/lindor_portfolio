@@ -12,7 +12,7 @@ interface SkillCardProps {
 
 const skillsData = {
   frontend: [
-    { name: 'React', icon: <Code size={32} /> },
+    { name: 'JavaScript', icon: <Code size={32} /> },
     { name: 'TypeScript', icon: <Code size={32} /> },
     { name: 'Tailwind CSS', icon: <Code size={32} /> },
     { name: 'Angular', icon: <Code size={32} /> },
@@ -28,8 +28,8 @@ const skillsData = {
   ],
   other: [
       { name: 'Git & GitHub', icon: <BrainCircuit size={32} /> },
-      { name: 'Figma', icon: <BrainCircuit size={32} /> },
-      { name: 'Jest', icon: <BrainCircuit size={32} /> },
+      { name: 'Language C/C++', icon: <Code size={32} /> },
+      { name: 'Réseaux', icon: <BrainCircuit size={32} /> },
   ]
 };
 

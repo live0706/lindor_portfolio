@@ -6,7 +6,7 @@ const About = () => {
           À Propos de Moi
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16">
-          <div className="md:w-1/3 flex-shrink-0">
+          <div className="md:w-1/3 shrink-0">
             <div className="w-72 h-72 md:w-80 md:h-80 mx-auto border-4 border-accent/50 shadow-lg bg-card-bg flex items-center justify-center">
               <img
                 src="/profile.jpeg"

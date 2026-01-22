@@ -14,8 +14,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "build:watch": "vite build --watch > build.log 2>&1",
     "watch:errors": "node dala-internal-watch-build-errors.js",
-    "preview:dev": "concurrently \"npm run build:watch\" \"npm run watch:errors\" \"npm run preview\"",
-    "postinstall": "chmod +x node_modules/.bin/*"
+    "preview:dev": "concurrently \"npm run build:watch\" \"npm run watch:errors\" \"npm run preview\""
   },
   "packageManager": "bun@1.2.22",
   "dependencies": {

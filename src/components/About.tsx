@@ -1,3 +1,5 @@
+import profileImage from '../assets/profile.jpeg';
+
 const About = () => {
   return (
     <section id="about" className="py-24 bg-card-bg">
@@ -9,7 +11,7 @@ const About = () => {
           <div className="md:w-1/3 shrink-0">
             <div className="w-72 h-72 md:w-80 md:h-80 mx-auto border-4 border-accent/50 shadow-lg bg-card-bg flex items-center justify-center">
               <img
-                src="/profile.jpeg"
+                src={profileImage}
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />

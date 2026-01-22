@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import html2pdf from 'html2pdf.js';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,18 @@ const Header = () => {
     { href: '#projects', label: 'Projets' },
     { href: '#contact', label: 'Contact' },
   ];
+
+  const downloadPDF = () => {
+    const element = document.body;
+    const options = {
+      margin: 0.5,
+      filename: 'portfolio-pape-lindor-fall.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(options).from(element).save();
+  };
 
   return (
     <header className="bg-dark-bg/85 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700/50 shadow-sm animate-fade-down">
@@ -25,6 +38,12 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={downloadPDF}
+            className="bg-accent hover:bg-accent/80 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300"
+          >
+            Télécharger CV
+          </button>
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
@@ -47,6 +66,15 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                downloadPDF();
+              }}
+              className="bg-accent hover:bg-accent/80 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 mt-2"
+            >
+              Télécharger CV
+            </button>
           </div>
         </div>
       )}
